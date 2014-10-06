@@ -12,7 +12,7 @@ apply plugin: 'scala'
 apply plugin: 'application'
 apply plugin: 'idea'
 
-mainClassName = 'problems.Problem78'
+mainClassName = 'problems.Problem80'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -21,8 +21,15 @@ repositories {
     mavenCentral()
 }
 
+ext {
+  versions = [
+    scala: '2.11.2'
+  ]
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // We use Scala 2.11 in our library project
-    compile 'org.scala-lang:scala-library:2.11.2'
+    compile "org.scala-lang:scala-library:$versions.scala"
+    runtime "org.scala-lang:scala-compiler:$versions.scala"
 }
